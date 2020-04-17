@@ -26,15 +26,17 @@ const App = () => {
     })
   }, []);
 
+  {characters && characters.map(item => console.log(item.name))};
+
   return (
     <React.Fragment>
 
     <div className="App">
       <h1 className="Header">Characters from Star Wars</h1>
-  <h2>{`${(res.data.results[0]).name}`}</h2>
+  {/* <h2>{characters && `${(characters[0]).name}`}</h2> */}
     </div>
     <div>
-      {/* <NameList characters={characters} /> */}
+      <NameList characters={characters} />
 
     </div>
     </React.Fragment>

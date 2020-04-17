@@ -5,10 +5,12 @@ const NameList = ({characters}) => {
     <div className='list-characterNames container'>
       <h2>Type in one of the following characters to see details:</h2>
       <ul>
-              {/* Loop over generate <li/> elements 
-              {characters.map(
-                (name, index) => <li key={index}>{name}</li>
-              )} */}
+        {/* <li>{characters && `${(characters[0]).name}`}</li> */}
+              {/* Loop over generate <li/> elements  */}
+         
+                
+                  {characters && characters.map((item, index) => <li key={index}>{item.name}</li>
+              )} 
             </ul>
     </div>
   )
