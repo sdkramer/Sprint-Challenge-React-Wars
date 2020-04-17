@@ -6,7 +6,7 @@ import NameList from "./components/NameList"
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [characters, setCharacters] = useState('')
+  const [characters, setCharacters] = useState(null)
 
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -17,7 +17,9 @@ const App = () => {
   useEffect(() => {
     axios.get("https://swapi.py4e.com/api/people/?")
     .then((res) => {
-      console.log(res.data.results);
+      
+      setCharacters(res.data.results);
+      console.log((res.data.results[0]).name);
     })
     .catch((err) => {
 
@@ -29,9 +31,11 @@ const App = () => {
 
     <div className="App">
       <h1 className="Header">Characters from Star Wars</h1>
+  <h2>{`${(res.data.results[0]).name}`}</h2>
     </div>
     <div>
-<NameList />
+      {/* <NameList characters={characters} /> */}
+
     </div>
     </React.Fragment>
 
