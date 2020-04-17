@@ -9,9 +9,10 @@ const NameList = ({charactersList}) => {
               {/* Loop over generate <li/> elements  */}
          
                 
-                  {charactersList && charactersList.map((item, index) => <li key={index}>{item.name}</li>
+                  {charactersList && charactersList.map((item, index) => <li key={index}>{item.name}</li>    
               )} 
             </ul>
+            
     </div>
   )
 }

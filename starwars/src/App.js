@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from "axios";
-import NameList from "./components/NameList"
+import NameList from "./components/NameList";
+import Character from './components/Character';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -37,6 +38,7 @@ const App = () => {
     </div>
     <div>
       <NameList charactersList={charactersList} />
+     <Character charactersList={charactersList}/>
 
     </div>
     </React.Fragment>

@@ -29,3 +29,5 @@ const Character = ({charactersList}) => {
     </WrapperDiv>
   )
 }
+
+export default Character;
