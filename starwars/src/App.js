@@ -6,11 +6,11 @@ import NameList from "./components/NameList"
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [characters, setCharacters] = useState(null)
+  const [charactersList, setcharactersList] = useState(null)
 
   const [searchTerm, setSearchTerm] = useState('')
 
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
+  // Fetch charactersList from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
@@ -18,25 +18,25 @@ const App = () => {
     axios.get("https://swapi.py4e.com/api/people/?")
     .then((res) => {
       
-      setCharacters(res.data.results);
-      console.log((res.data.results[0]).name);
+      setcharactersList(res.data.results);
+      console.log((res.data.results));
     })
     .catch((err) => {
 
     })
   }, []);
 
-  {characters && characters.map(item => console.log(item.name))};
+  {charactersList && charactersList.map(item => console.log(item.name))};
 
   return (
     <React.Fragment>
 
     <div className="App">
-      <h1 className="Header">Characters from Star Wars</h1>
-  {/* <h2>{characters && `${(characters[0]).name}`}</h2> */}
+      <h1 className="Header">charactersList from Star Wars</h1>
+  {/* <h2>{charactersList && `${(charactersList[0]).name}`}</h2> */}
     </div>
     <div>
-      <NameList characters={characters} />
+      <NameList charactersList={charactersList} />
 
     </div>
     </React.Fragment>
