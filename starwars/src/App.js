@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from "axios";
-import NameList from "./components/NameList";
+import SonnetsList from "./components/SonnetsList";
 import Character from './components/Character';
 import Search from './components/Search';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [sonnetsList, setsonnetsList] = useState(null)
+  const [sonnetsList, setSonnetsList] = useState(null)
 
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -20,15 +20,15 @@ const App = () => {
     axios.get("http://poetrydb.org/author,title/Shakespeare;Sonnet")
     .then((res) => {
       
-      setsonnetsList(res.data);
-      // console.log((res.data[2]).title);
+      setSonnetsList(res.data);
+      console.log(res.data);
     })
     .catch((err) => {
 
     })
   }, []);
 
-  {sonnetsList && sonnetsList.map(item => console.log(item.title))};
+  // {sonnetsList && sonnetsList.map(item => console.log(item.title))};
 
   return (
     <React.Fragment>
@@ -39,7 +39,7 @@ const App = () => {
     </div>
     <div>
       <Search setSearchTerm={setSearchTerm} />
-      <NameList sonnetsList={sonnetsList} />
+      <SonnetsList sonnetsList={sonnetsList} />
      <Character sonnetsList={sonnetsList}/>
 
     </div>
