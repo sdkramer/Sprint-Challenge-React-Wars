@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-image: url('./images/sw-bg.jpg');
-  min-height: 100%;
+  color: rgba(255, 239, 239, 0.644);
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/shak.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
