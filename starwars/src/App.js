@@ -3,6 +3,7 @@ import './App.css';
 import axios from "axios";
 import NameList from "./components/NameList";
 import Character from './components/Character';
+import Search from './components/Search';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -37,6 +38,7 @@ const App = () => {
   {/* <h2>{sonnetsList && `${(sonnetsList[0]).name}`}</h2> */}
     </div>
     <div>
+      <Search setSearchTerm={setSearchTerm} />
       <NameList sonnetsList={sonnetsList} />
      <Character sonnetsList={sonnetsList}/>
 
