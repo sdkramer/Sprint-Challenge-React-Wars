@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from "axios";
 import SonnetsList from "./components/SonnetsList";
-import Character from './components/Character';
+import SonnetText from './components/SonnetText';
 import Search from './components/Search';
 
 const App = () => {
@@ -39,8 +39,9 @@ const App = () => {
     </div>
     <div>
       <Search setSearchTerm={setSearchTerm} />
+      <SonnetText sonnetsList={sonnetsList}/>
       <SonnetsList sonnetsList={sonnetsList} />
-     <Character sonnetsList={sonnetsList}/>
+     
 
     </div>
     </React.Fragment>

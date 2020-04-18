@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Search({ setSearchTerm }) {
+  
   // On 'change' of the input we should set a new search term in app state
   const changeHandler = event => {
     const searchTerm = event.target.value
@@ -9,7 +10,7 @@ export default function Search({ setSearchTerm }) {
 
   return (
     <div className='search-friends container'>
-      Search for a sonnet: <input />
+      Search for a sonnet: <input onChange={changeHandler}/>
     </div>
   )
 }

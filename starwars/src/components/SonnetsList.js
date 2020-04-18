@@ -1,6 +1,7 @@
 import React from 'react'
 
 const SonnetsList = ({sonnetsList}) => {
+
   return (
     <div className='list-characterNames container'>
       <h2>Type in one of the following sonnets to see details:</h2>
