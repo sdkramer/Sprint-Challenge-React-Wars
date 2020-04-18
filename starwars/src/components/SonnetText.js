@@ -27,7 +27,13 @@ const SonnetText = ({sonnetsList}) => {
   return (
     <WrapperDiv>
       <Text>
-        {sonnetsList && sonnetsList.map((sonnet, index) => <div key={index}>{sonnet.lines}</div>)
+        
+        {sonnetsList && sonnetsList.map((sonnet, index) => 
+        <React.Fragment>
+        <div key={index}>{sonnet.title}</div>
+        <br></br>
+        <div key={index}>{sonnet.lines}</div>
+        </React.Fragment>)
         }
       </Text>
     </WrapperDiv>
